@@ -7535,31 +7535,39 @@ $$</p>
 R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}
 $$</p>
 <p>Here, $ c $ is some point between $ a $ and $ x $. The remainder term $ R_n(x) $ represents the error in approximating $ f(x) $ by the $ n $-th degree Taylor polynomial centered at $ a $. The form of the remainder provided by Lagrange gives a specific way to bound this error, depending on the $(n+1)$-th derivative of $ f $ at some point $ c $ in the interval.</p>
-<h5 id="Proof.">Proof.<a class="anchor-link" href="#Proof.">¶</a></h5><p>Given that $ f(x) $ is $ (n+1) $ times differentiable, then we can use the Cauchy's Mean Value Theorem on the functions $ F(t) = f(x+t \Delta x) - P_{n}(t \Delta x) $ and $ G(t) = (t \Delta x)^{n+1} $, where $ t $ is an arbitrary constant between $ 0 $ and $ 1 $</p>
+<h5 id="Proof.">Proof.<a class="anchor-link" href="#Proof.">¶</a></h5><p>Given that $ f(x) $ is $ (n+1) $ times differentiable, then we can use the Cauchy's Mean Value Theorem on the functions $ F(t) = f(a+t \Delta x) - P_{n}(t \Delta x) $ and $ G(t) = (t \Delta x)^{n+1} $, where $ t $ is an arbitrary constant between $ 0 $ and $ 1 $</p>
 <p>$$ 
-\frac{F(t)-F(0)}{G(t)-G(0)} = \frac{(f'(x+t_{1} \Delta x) - P_{n}'(t_{1} \Delta x)) \Delta x}{(n+1)(t_{1} \Delta x)^{n} \Delta x} = \ldots = \frac{f^{(n)}(x+t_{n} \Delta x) - P_{n}^{(n)}(t_{n} \Delta x)}{(n+1)!} 
+\frac{F(t)-F(0)}{G(t)-G(0)} = \frac{(f'(a+t_{1} \Delta x) - P_{n}'(t_{1} \Delta x)) \Delta x}{(n+1)(t_{1} \Delta x)^{n} \Delta x} = \ldots = \frac{f^{(n)}(a+t_{n+1} \Delta x)}{(n+1)!} 
 $$</p>
 <p>then let $ t=1 $ and we can get the Lagrange's form.</p>
 <h4 id="1.3--Taylor's-Theorem-with-Cauchy's-Form-of-Remainder">1.3  Taylor's Theorem with Cauchy's Form of Remainder<a class="anchor-link" href="#1.3--Taylor's-Theorem-with-Cauchy's-Form-of-Remainder">¶</a></h4><p>Cauchy's Form of the Remainder is anither way to express the remainder term $ R_n(x) $. It states that:</p>
 <p>$$ R_n(x) = \frac{f^{(n+1)}(c)}{n!}(x-c)^n(x-a) $$</p>
 <p>where $ c $ is some number between $ a $ and $ x $ .</p>
-<h5 id="Proof.">Proof.<a class="anchor-link" href="#Proof.">¶</a></h5><h5 id="Applications:">Applications:<a class="anchor-link" href="#Applications:">¶</a></h5><p>Using the Taylor's theorem with Lagrange's form of remainder to estimate the Taylor series's error.</p>
+<h5 id="Proof.">Proof.<a class="anchor-link" href="#Proof.">¶</a></h5><p>Given that $ f(x) $ is $ (n+1) $ times differentiable, then we can use the Cauchy's Mean Value Theorem on the functions $ F(t) = f(x) - P_{n}(x-t \Delta x) $ and $ G(t) = x - t \Delta x $, where $ t $ is an arbitrary constant between $ 0 $ and $ 1 $</p>
+<p>$$ 
+\frac{F(t)-F(0)}{G(t)-G(0)} = \frac{f^{(n+1)}(x-t_{1} \Delta x)(t_{1} \Delta x)^n \Delta x}{-n!\Delta x}
+$$</p>
+<p>then let $ t=1 $ and we can get the Cauchy's form.</p>
+<h5 id="Applications:">Applications:<a class="anchor-link" href="#Applications:">¶</a></h5><p>Using the Taylor's theorem with Lagrange's form of remainder to estimate the Taylor series's error.</p>
 <h6 id="EX.1">EX.1<a class="anchor-link" href="#EX.1">¶</a></h6><p>Given that$ f \in C^{3}[a-h, a+h] $, $ h &gt; 0  $ and $ \lvert f(x) \rvert \leq M $, prove that</p>
 <p>$$ 
 \lvert \frac{f(a+h)+f(a-h)-2f(a)}{h^2} - f''(a) \rvert \leq \frac{Mh}{3} 
 $$</p>
 <h6 id="Proof.">Proof.<a class="anchor-link" href="#Proof.">¶</a></h6><p>First use $f$'s Taylor Series about a:</p>
 <p>$$ 
-f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2}(x-a)^2 + o((x-a)^2) 
+f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2}(x-a)^2 + \frac{f'''(a+t(x-a))}{6}(x-a)^3
 $$</p>
 <p>so it is trivial that</p>
 <p>$$ 
-f(a+h) = f(a) + f'(a)h + \frac{f''(a)}{2}h^2 + o(h^2) 
+f(a+h) = f(a) + f'(a)h + \frac{f''(a)}{2}h^2 + \frac{f'''(a+th)}{6}h^3 
 $$</p>
 <p>$$ 
-f(a-h) = f(a) - f'(a)h + \frac{f''(a)}{2}h^2 + o(h^2) 
+f(a-h) = f(a) - f'(a)h + \frac{f''(a)}{2}h^2 + \frac{f'''(a-th)}{6}h^3 
 $$</p>
-<p>so $$ f(a+h) + f(a-h) - 2f(a) = 2$$</p>
+<p>so
+$$ 
+\lvert f(a+h) + f(a-h) - 2f(a) \rvert = \lvert f''(a)h^2 + \frac{f'''(a+th) + f'''(a-th)}{6}h^3 \rvert \leq \lvert f''(a)h^2 + \frac{1}{3}Mh^3 \rvert
+$$</p>
 </div>
 </div>
 </div>
