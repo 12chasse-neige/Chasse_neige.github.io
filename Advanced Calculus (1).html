@@ -7517,7 +7517,17 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Final-Review-of-Advanced-Calculus">Final Review of Advanced Calculus<a class="anchor-link" href="#Final-Review-of-Advanced-Calculus">¶</a></h2><h3 id="1.-Taylor's-Theorem">1. Taylor's Theorem<a class="anchor-link" href="#1.-Taylor's-Theorem">¶</a></h3><h4 id="1.1-Taylor's-Theorem-with-Peano's-Form-of-Remainder">1.1 Taylor's Theorem with Peano's Form of Remainder<a class="anchor-link" href="#1.1-Taylor's-Theorem-with-Peano's-Form-of-Remainder">¶</a></h4><p>When $ f(x) $ is n times differentiable on an open interval $ I $ containing the point $ a $</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Final-Review-of-Advanced-Calculus%EF%BC%881%EF%BC%89">Final Review of Advanced Calculus（1）<a class="anchor-link" href="#Final-Review-of-Advanced-Calculus%EF%BC%881%EF%BC%89">¶</a></h2><h3 id="1.-Taylor's-Theorem">1. Taylor's Theorem<a class="anchor-link" href="#1.-Taylor's-Theorem">¶</a></h3><h4 id="1.1-Taylor's-Theorem-with-Peano's-Form-of-Remainder">1.1 Taylor's Theorem with Peano's Form of Remainder<a class="anchor-link" href="#1.1-Taylor's-Theorem-with-Peano's-Form-of-Remainder">¶</a></h4><p>When $ f(x) $ is n times differentiable on an open interval $ I $ containing the point $ a $</p>
 <p>$$ 
 f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \cdots + \frac{f^{(n)}(a)}{n!}(x-a)^n + o((x-a)^n) 
 $$</p>
@@ -7540,7 +7550,7 @@ $$</p>
 \frac{F(t)-F(0)}{G(t)-G(0)} = \frac{(f'(a+t_{1} \Delta x) - P_{n}'(t_{1} \Delta x)) \Delta x}{(n+1)(t_{1} \Delta x)^{n} \Delta x} = \ldots = \frac{f^{(n)}(a+t_{n+1} \Delta x)}{(n+1)!} 
 $$</p>
 <p>then let $ t=1 $ and we can get the Lagrange's form.</p>
-<h4 id="1.3--Taylor's-Theorem-with-Cauchy's-Form-of-Remainder">1.3  Taylor's Theorem with Cauchy's Form of Remainder<a class="anchor-link" href="#1.3--Taylor's-Theorem-with-Cauchy's-Form-of-Remainder">¶</a></h4><p>Cauchy's Form of the Remainder is anither way to express the remainder term $ R_n(x) $. It states that:</p>
+<h4 id="1.3--Taylor's-Theorem-with-Cauchy's-Form-of-Remainder">1.3  Taylor's Theorem with Cauchy's Form of Remainder<a class="anchor-link" href="#1.3--Taylor's-Theorem-with-Cauchy's-Form-of-Remainder">¶</a></h4><p>Cauchy's Form of the Remainder is another way to express the remainder term $ R_n(x) $. It states that:</p>
 <p>$$ R_n(x) = \frac{f^{(n+1)}(c)}{n!}(x-c)^n(x-a) $$</p>
 <p>where $ c $ is some number between $ a $ and $ x $ .</p>
 <h5 id="Proof.">Proof.<a class="anchor-link" href="#Proof.">¶</a></h5><p>Given that $ f(x) $ is $ (n+1) $ times differentiable, then we can use the Cauchy's Mean Value Theorem on the functions $ F(t) = f(x) - P_{n}(x-t \Delta x) $ and $ G(t) = x - t \Delta x $, where $ t $ is an arbitrary constant between $ 0 $ and $ 1 $</p>
@@ -7703,6 +7713,26 @@ B_{n}(f')(x) = \sum_{k=0}^{n} f'(\frac{k}{n})\, C_{n}^{k}\, x^{k}\, (1-x)^{n-k}
 $$
 can be a template.</li>
 </ol>
+<h6 id="EX.2-Riemann-Lebesgue-Lemma">EX.2 Riemann-Lebesgue Lemma<a class="anchor-link" href="#EX.2-Riemann-Lebesgue-Lemma">¶</a></h6><p>If $ f $ is a Riemann integrable function on the interval $[a, b]$ and $ g $ is a periodic function with period $ T $ that is integrable on $[0, T]$</p>
+<p>$$
+\lim_{p \to \infty} \int_a^b f(x) g(px) \, dx = \frac{1}{T} \int_0^T g(x) \, dx \int_a^b f(x) \, dx
+$$</p>
+<h6 id="Proof.">Proof.<a class="anchor-link" href="#Proof.">¶</a></h6><p>According to the additivity principle,</p>
+<p>$$
+\int_{a}^{b} f(x) g(px) dx = \sum_{k=1}^{n} \int_{x_{k-1}}^{x_{k}} f(x) g(px) dx
+$$</p>
+<p>Using the Integral Mean Value Theorem, we can deduce that for every interval $ [x_{k-1}, x_{k}] $, there exists a $ \xi_{k} \in  [x_{k-1}, x_{k}] $ so that</p>
+<p>$$
+\int_{x_{k-1}}^{x_{k}} f(x) g(px) dx = f(\xi_{k}) \int_{x_{k-1}}^{x_{k}} g(px) dx
+$$</p>
+<p>Choose a partition $ \pi: a=x_{0} &lt; a + \frac{T}{p} = x_{1} &lt; \cdots &lt; x_{n} = b $, so</p>
+<p>$$
+\int_{x_{k-1}}^{x_{k}} g(px) dx = \frac{1}{p} \int_{0}^{T} g(t) dt
+$$</p>
+<p>Therefore, we can add the parts and use the definition of the Riemann Integral to get the lemma:</p>
+<p>$$
+\lim_{p \to \infty} \int_a^b f(x) g(px) \, dx = \lim_{p \to \infty} \frac{1}{p} \sum_{k=1}^{n} f(\xi_{k}) \int_{0}^{T} g(t) dt = \lim_{n \to \infty} \sum_{k=1}^{n} f(\xi_{k}) \frac{b-a}{nT} \int_{0}^{T} g(t) dt = \frac{1}{T} \int_0^T g(x) \, dx \int_a^b f(x) \, dx
+$$</p>
 </div>
 </div>
 </div>
