@@ -7733,6 +7733,27 @@ $$</p>
 <p>$$
 \lim_{p \to \infty} \int_a^b f(x) g(px) \, dx = \lim_{p \to \infty} \frac{1}{p} \sum_{k=1}^{n} f(\xi_{k}) \int_{0}^{T} g(t) dt = \lim_{n \to \infty} \sum_{k=1}^{n} f(\xi_{k}) \frac{b-a}{nT} \int_{0}^{T} g(t) dt = \frac{1}{T} \int_0^T g(x) \, dx \int_a^b f(x) \, dx
 $$</p>
+<h6 id="EX.3">EX.3<a class="anchor-link" href="#EX.3">¶</a></h6><p>If $ f $ is a differentiable funcition on the interval $ [a,b] $, given the Integral Mean Value Theorem</p>
+<p>$$
+\int_{a}^{x} f(x) dx = f(\xi(x)) (x-a)
+$$</p>
+<p>Prove that</p>
+<p>$$
+\lim_{x \to a+} \frac{\xi(x)-a}{x-a} = \frac{1}{2}
+$$</p>
+<h6 id="Proof.">Proof.<a class="anchor-link" href="#Proof.">¶</a></h6><p>Given that $ f $ is differentiable, we can write its Taylor series</p>
+<p>$$
+f(\xi(x)) = f(a) + f'(a) (\xi-a) + o(\xi - a)
+$$
+$$
+\therefore \int_{a}^{x} f(x) dx = (f(a) + f'(a) (\xi-a) + o(\xi - a)) (x-a)
+$$
+$$
+\therefore \lim_{x \to a+} \frac{\int_{a}^{x} f(x) dx}{(x-a)^2} = \frac{1}{2} f'(a) = f'(a) \frac{\xi-a}{x-a} 
+$$
+$$
+\therefore \lim_{x \to a+} \frac{\xi(x)-a}{x-a} = \frac{1}{2}
+$$</p>
 </div>
 </div>
 </div>
