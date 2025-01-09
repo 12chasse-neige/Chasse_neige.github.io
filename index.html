@@ -4,12 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="CSS/main.css">
+    <link rel="stylesheet" type="text/css" href="CSS/button.css">
 </head>
 <body>
-    <h1>Welcome to My Personal Page</h1>
-    <p>This is a simple website where my preview and review notes of some mathematics and physics courses will be available.</p>
-    <a href="Contents/Advanced Calculus (1).html">Advanced Calculus (1) Final Review</a><br>
-    <a href="Contents/Special Functions.html">Special Fuctions: Introduction to Electrodynamics</a>
+    <header>
+        <h1>Chasse_neige's Personal Page</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#notes">Notes</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to My Personal Page</h2>
+            <p>This is a simple webpage to get access to my personal information and my published works.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Learn more about me through this section.</p>
+            <a href="Self_introduction.html" class="button">Self Introduction</a>
+        </section>
+
+        <section id="notes">
+            <h2>My Notes</h2>
+            <p>Here my preview and review notes of some mathematics and physics courses are available.</p>
+            <a href="Contents/Maths_index.html" class="button">Maths</a>
+            <a href="Contents/Physics_index.html" class="button">Physics</a>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Get in touch with me for more information or support.</p>
+            <a href="Contents/contact.html" class="button">Contact</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Personal Page. All rights reserved.</p>
+    </footer>
 </body>
 </html>
