@@ -1,7 +1,7 @@
 .button {
     display: inline-block;
     padding: 5px 20px;
-    background-color: black;
+    background-color: rgba(81,111,167,1); /* 修改背景颜色为蓝色 */
     color: white;
     text-decoration: none;
     border: none;
@@ -12,7 +12,7 @@
 button {
     display: inline-block;
     padding: 5px 20px;
-    background-color: black;
+    background-color: rgba(81,111,167,1); /* 修改背景颜色为蓝色 */
     color: white;
     text-decoration: none;
     border: none;
@@ -21,9 +21,9 @@ button {
 }
 
 .button:hover {
-    background-color: #013260;
+    background-color: #013260; /* 这个颜色也可以根据需要调整为蓝色 */
 }
 
 button:hover {
-    background-color: #013260;
+    background-color: #013260; /* 这个颜色也可以根据需要调整为蓝色 */
 }
