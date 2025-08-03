@@ -92,7 +92,10 @@ giscus-widget .MathJax_Display {
 }
 
 giscus-widget pre {
-    font-family: 'JetBrainsMono' !important;
+    font-family: 'JetBrainsMono'"Palatino Linotype",
+        "Book Antiqua",
+        Palatino,
+        serif !important;
     background-color: var(--block-bg-color) !important;
     border-radius: 10px !important;
     padding: 1.2rem .8rem !important;
