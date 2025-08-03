@@ -69,3 +69,31 @@ footer {
     margin-top: 20px;
 }
 
+giscus-widget {
+    display: block;
+    max-width: 900px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+
+.giscus-comment {
+    font-family: inherit;
+    line-height: 1.8rem;
+}
+
+.giscus-button {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+giscus-widget .MathJax_Display {
+    margin: 0.8em 0;
+}
+
+giscus-widget pre {
+    font-family: 'JetBrainsMono' !important;
+    background-color: var(--block-bg-color) !important;
+    border-radius: 10px !important;
+    padding: 1.2rem .8rem !important;
+}
