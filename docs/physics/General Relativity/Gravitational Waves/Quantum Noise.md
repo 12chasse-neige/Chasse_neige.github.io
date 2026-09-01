@@ -8,7 +8,8 @@ Advanced LIGO名义运行模式的预期应变噪声谱如图2所示。在名义
 
 除了应变噪声谱外，探测器灵敏度的另一个标准品质因数是能够探测到双中子星（BNS）并合发出的引力波信号的距离。BNS范围定义为：在单个探测器中，一个并合事件产生匹配滤波器信噪比为8时的体积和方向平均距离[13]。图2中应变噪声曲线对应的BNS范围为190 Mpc。
 
-<img src="./Quantum Noise.assets/image-20260218162407674.png" alt="image-20260218162407674" style="zoom:33%;" />
+<img src="./Quantum Noise.assets/image-20260218162407674.png" alt="image-20260218162407674"  />
+
 图2 Advanced LIGO名义（高功率、宽带）运行模式的主要噪声项。
 
 ### 量子噪声
@@ -56,10 +57,9 @@ $4$公里长光束管中的残余气体会导致光路中气体粒子柱密度�
 | 低功率 (Low power) | 25 W | 35% | 0 | 160 Mpc |
 | BNS 优化 (BNS optimized) | 125 W | 20% | 16 deg. | 210 Mpc |
 
-<img src="./Quantum Noise.assets/image-20260218162448475.png" alt="image-20260218162448475" style="zoom:50%;" />
+<img src="./Quantum Noise.assets/image-20260218162448475.png" alt="image-20260218162448475" style="zoom: 67%;" />
+
 图3 对应于表2定义的模式以及图2所示名义灵敏度的Advanced LIGO应变噪声谱。$500\ \mathrm{Hz}$处的特征是测试质量悬挂光纤的（未解析的）基频振动模式。
-
-
 
 
 
@@ -532,4 +532,29 @@ $$
 
 $$
 \bar{s}_{2} = -\frac{\sqrt{2K}}{h_{\mathrm{SQL}}} \tau \left( -1 + \rho \mathrm{e}^{2\imath\Phi} \right) \cos(\phi)
+$$
+
+## 残余气体噪声
+
+### 残余气体带来的相位波动
+
+残余气体噪声代表了分子穿过光路的时候引起的相位变化，可以用cavity light往返期间这些分子总的穿过数量来进行估计。一般来说，我们采取近似
+$$
+2 \pi f \ll \frac{v_{0}}{w}
+$$
+这保证了在一次分子穿过激光的过程中引力波强度近似是不变的。对于残余气体而言，一个好的估计是
+$$
+S_{L} (f) = (2 \pi \alpha)^{2} \frac{4 \rho}{v_{0}} \int_{0}^{L_{0}} \frac{e^{- 2 \pi f w(z)/v_{0}}}{w(z)} \dd{z}
+$$
+即残余气体噪声满足 $S_{L} \propto \alpha^{2} m^{1/2} P$ 
+
+### 残余气体带来的布朗噪声
+
+对于残余气体而言，由于残余气体会对 TM 产生一个 damping 的效果，所以根据 FDT，残余气体撞击 TM 会留下一个 Brownian force noise，并且这个噪声在 TM 和 RM 的 gap 中会得到增益，即所谓的 proximity-enhance ，这一噪声可以描述为
+$$
+S_{F} (\omega) = 4 k_{B} T \Re [Z (\omega)] = 4 k_{B}T \Re \left(- \frac{F (\omega)}{v (\omega)}\right) = S_{F}^{\infty} + \Delta S_{F} (w)
+$$
+ 其中我们可以把 source noise model 设置成
+$$
+S_{F} (\omega) = S_{F}^{\infty} (\omega) + \frac{\Delta S_{F0}}{1 + (\omega \tau)^{2}}
 $$
